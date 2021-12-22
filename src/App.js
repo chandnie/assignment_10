@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 import About from "./components/About";
-import { ContextProvider } from "./components/UseContext";
+import Login from "./components/login";
 
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false);
@@ -122,15 +122,15 @@ const App = () => {
 
   return (
     <Router>
-    <ContextProvider>
       <div className="container">
         <Header
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}
         />
         <Routes>
+          <Route path="/" element={<Login />}></Route>
           <Route
-            path="/"
+            path="/home"
             element={
               <>
                 {showAddTask && <AddTask onAdd={addTask} />}
@@ -150,7 +150,6 @@ const App = () => {
         </Routes>
         <Footer />
       </div>
-    </ContextProvider>
     </Router>
   );
 };
