@@ -1,3 +1,3 @@
-# assignment_9
+# assignment_10
 # Task Manager
-# used useContext
+# implement redux and login functionality
